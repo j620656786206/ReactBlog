@@ -6,12 +6,12 @@
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "postinstall": "NODE_ENV=production webpack -p",
-    "start": "node server.js",
+    "postinstall": "webpack -p",
+    "start": "set NODE_ENV=production && webpack -p && node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
+  "author": "Alex Yu",
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
