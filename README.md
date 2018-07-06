@@ -1,5 +1,5 @@
 ### Getting Started
 
-Blog application using react router and redux form
+Blog application using React and Redux
 
 Demo: https://blog-cwyualex.herokuapp.com/

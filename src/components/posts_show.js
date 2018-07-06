@@ -49,4 +49,7 @@ function mapStatetoProps({posts}, ownProps) {
   return {post: posts[ownProps.match.params.id]};
 }
 
-export default connect(mapStatetoProps, {fetchPost, deletePost})(PostsShow);
+export default connect(
+  mapStatetoProps,
+  {fetchPost, deletePost}
+)(PostsShow);

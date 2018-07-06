@@ -6,21 +6,16 @@ import {createPost} from '../actions';
 
 class PostNew extends Component {
   renderField(field) {
-
-    const {meta: {touched, error}} = field;
+    const {
+      meta: {touched, error}
+    } = field;
     const className = `form-group ${touched && error ? 'has-danger' : ''}`;
 
     return (
       <div className={className}>
         <label>{field.label}</label>
-        <input
-          className="form-control"
-          type="text"
-          {...field.input}
-        />
-        <div className="text-help">
-          {touched ? error : ''}
-        </div>
+        <input className="form-control" type="text" {...field.input} />
+        <div className="text-help">{touched ? error : ''}</div>
       </div>
     );
   }
@@ -51,8 +46,12 @@ class PostNew extends Component {
           name="content"
           component={this.renderField}
         />
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <Link to="/" className="btn btn-danger">Cancel</Link>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+        <Link to="/" className="btn btn-danger">
+          Cancel
+        </Link>
       </form>
     );
   }
@@ -81,5 +80,8 @@ export default reduxForm({
   validate,
   form: 'PostsNewForm'
 })(
-  connect(null, {createPost})(PostNew)
+  connect(
+    null,
+    {createPost}
+  )(PostNew)
 );
